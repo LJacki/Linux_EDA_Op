@@ -38,5 +38,21 @@ vcs	-full64 *.v \
 	-l compile.log
 ```
 
+这个VCS使用写的很详细：
 
+https://zhuanlan.zhihu.com/p/127335447
+
+
+
+PrimeTime
+
+https://wenku.baidu.com/view/676a1337d5bbfd0a785673a4.html
+
+https://www.jianshu.com/p/30769ce8925a
+
+在文档中找到一个文件：PrimeTime_PX_Tutorials
+
+PT使用中文教程：https://wenku.baidu.com/view/b33455d4360cba1aa811da43.html
+
+所以，需要整理一个Project，做完Sim，DC，和primetime；
 
