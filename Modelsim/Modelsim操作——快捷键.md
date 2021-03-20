@@ -1,40 +1,49 @@
 # Modelsim键盘快捷键和鼠标操作
 
-使用Modelsim查看波形，大多数是键盘和鼠标配合，通过熟悉快捷键操作可以帮助提高调试效率。
+使用Modelsim查看波形，大多数的操作是键盘和鼠标配合，通过熟悉快捷键操作可以帮助提操作效率。
 
-内容来自Modelsim的官方指导手册；`Help -> SE Documentation - InfoHub（HTML Brower Required）`
+内容来自Modelsim的官方指导手册，在GUI界面中可以这样查询：
 
-![image-20210320103914229](Modelsim操作——快捷键.assets/image-20210320103914229.png)
+`Help -> SE Documentation - InfoHub（HTML Brower Required）`，如下图所示：
+
+![image-20210320103914229](https://gitee.com/sharewow/pic_repo/raw/master/img/image-20210320103914229.png)
+
+也可以通过安装目录进行查询，这里路径以安装在`D:盘`为例：
+
+```bash
+D:\modeltech64_10.6e\docs\htmldocs
+```
 
 ## 键盘快捷键和鼠标操作
 
 可以使用各种键盘和鼠标操作来操作用户界面。
 
 - 特定于窗口的键盘快捷键
-- ~~用户定义的键盘快捷键~~
+- 用户定义的键盘快捷键
 - 主窗口和源窗口的鼠标和键盘快捷键
 - GUI Windows中的键盘快捷键列表
 - 列表窗口键盘快捷键
-- Wave窗口鼠标和键盘快捷键
+- ==Wave窗口鼠标和键盘快捷键==
 
-上述用户自定义键盘快捷键操作，目前使用不到，就不做详细介绍了。
+前面几个快捷键的操作，做了解即可，笔者当前没有对用户定义键盘快捷键进行配置。使用频率最高的依然是最后一个==Wave窗口鼠标和键盘快捷键==。如果前面的内容不看，不影响直接跳转到那一节。
+
+以下内容使用google翻译，加上人工校对，如有问题以原版英文准。
 
 ## 特定于窗口的键盘快捷键
 
-可以通过在键盘上输入“ Ctrl + /”来打开许多ModelSim窗口的常用（预定义）和用户定义的键盘排序窗口的动态列表。
+可以通过在键盘上输入`Ctrl + /`来打开许多ModelSim窗口的常用（预定义）和用户定义的键盘排序窗口的动态列表。
 
 例如，图1显示了为“源”窗口提供的键盘快捷键列表。
 
 图1.源窗口的键盘快捷键
 
-![img](Modelsim操作——快捷键.assets/source_shortcuts.gif)
+![img](https://gitee.com/sharewow/pic_repo/raw/master/img/source_shortcuts.gif)
 
-
-通过单击列表底部的“查看所有快捷方式”，可以找到所有键盘快捷方式的完整列表（包括预定义的和用户定义的）。有关如何创建自定义快捷键的更多信息，请参考用户定义的键盘快捷键。
+通过单击列表底部的`查看所有快捷方式(View All Shortcuts)`，可以找到所有键盘快捷方式的完整列表（包括预定义的和用户定义的）。有关如何创建自定义快捷键的更多信息，请参考用户定义的键盘快捷键。
 
 ## 用户自定义的键盘快捷键
 
-除了预定义的键盘快捷键之外，您还可以使用“键盘快捷键”对话框创建自己的快捷键或修改预定义的键盘快捷键。
+除了预定义的键盘快捷键之外，您还可以使用`键盘快捷键`对话框创建自己的快捷键或修改预定义的键盘快捷键。
 
 快捷方式可以是特定于窗口的（仅当窗口处于活动状态时可用），也可以是全局的（可从工具中的任何位置使用）。您可以为任何ModelSim窗口创建键盘快捷键。
 
@@ -43,13 +52,13 @@
 ###　键盘快捷方式对话框
 
 键盘快捷方式对话框列出了所有现有的键盘快捷方式。此对话框区分用户定义的快捷方式和ModelSim模拟器预定义的快捷方式。
-图2显示了“键盘快捷键”对话框的示例，您可以通过从主菜单中选择以下内容来显示该对话框：
+图2显示了`键盘快捷键`对话框的示例，您可以通过从主菜单中选择以下内容来显示该对话框：
 
 `Windows>键盘快捷方式...`
 
 图2.键盘快捷方式对话框
 
-![img](Modelsim操作——快捷键.assets/kbd_shortcut_all-1616208510209.gif)
+![img](https://gitee.com/sharewow/pic_repo/raw/master/img/kbd_shortcut_all-1616208510209.gif)
 
 
 键盘快捷方式对话框使您可以：
@@ -74,7 +83,7 @@
 
    *图3.添加键盘快捷方式对话框*
 
-   ![img](Modelsim操作——快捷键.assets/kbd_shortcut_add.gif)
+   ![img](https://gitee.com/sharewow/pic_repo/raw/master/img/kbd_shortcut_add.gif)
 
    
 
@@ -91,9 +100,9 @@
 
 ## 主窗口和源窗口的鼠标和键盘快捷键
 
-以下鼠标操作和特殊的击键可用于在“main”窗口的输入区域中编辑命令。
+以下鼠标操作和特殊的按键可用于`main`窗口的输入区域中编辑命令。
 
-它们也可以用于编辑在“源”窗口和所有“**记事本”**窗口中显示的文件（在ModelSim中输入notepad命令以打开“记事本”编辑器）。
+它们也可以用于编辑在`源`窗口和所有“**记事本”**窗口中显示的文件（在ModelSim中输入notepad命令以打开“记事本”编辑器）。
 
 表1. 鼠标快捷方式
 
@@ -168,7 +177,7 @@
 
 *图1.原理图窗口键盘快捷键*
 
-![img](Modelsim操作——快捷键.assets/schematic_keyboard_shortcuts.gif)
+![img](https://gitee.com/sharewow/pic_repo/raw/master/img/schematic_keyboard_shortcuts.gif)
 
 您可以创建用户定义的键盘快捷方式并更改预定的快捷方式。有关更多信息，请参考[用户定义的键盘快捷键](Contain_UserDefinedKeyboardShortcuts_id45c046f4.html#id45c046f4-273a-429d-93f4-bd90950996f9__Contain_UserDefinedKeyboardShortcuts_id45c046f4.xml#id45c046f4-273a-429d-93f4-bd90950996f9)。
 
@@ -228,3 +237,10 @@
 | Ctrl + G                              | 自动为名称为Group <n>的区域的选定信号创建一个组。如果对已存在“ Group <n>”的信号使用此快捷方式，则将它们放置在该区域的组中，而不是创建一个新的组。 |
 | Ctrl + F（Windows）、Ctrl + S（UNIX） | 打开查找对话框；在路径名窗格中的指定字段中搜索文本字符串     |
 | Ctrl +向左键、Ctrl +右箭头            | 左右滚动页面的路径名，值或波                                 |
+
+## 写在后面
+
+当然不需要一次性用脑子记下来这么多操作，用到的时候想到咋用的，多用几次自然就习惯了。
+
+2021-03-20.
+
