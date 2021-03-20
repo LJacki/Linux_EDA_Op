@@ -208,9 +208,9 @@ D:\modeltech64_10.6e\docs\htmldocs
 
 | 鼠标动作1                                                    | 结果                                                       |
 | ------------------------------------------------------------ | ---------------------------------------------------------- |
-| Ctrl +单击鼠标左键并拖动![img](Modelsim操作——快捷键.assets/a_shortcuts1a.png) | 放大区域（zoom in）                                        |
-| Ctrl +单击鼠标左键并拖动![img](Modelsim操作——快捷键.assets/a_shortcuts2a.png) | 缩小（zoom out）                                           |
-| Ctrl +单击鼠标左键并拖动![img](Modelsim操作——快捷键.assets/a_shortcuts3a.png) | 缩放适合                                                   |
+| Ctrl +单击鼠标左键并拖动![img](https://gitee.com/sharewow/pic_repo/raw/master/img/a_shortcuts1a.png) | 放大区域（zoom in）                                        |
+| Ctrl +单击鼠标左键并拖动![img](https://gitee.com/sharewow/pic_repo/raw/master/img/a_shortcuts2a.png) | 缩小（zoom out）                                           |
+| Ctrl +单击鼠标左键并拖动![img](https://gitee.com/sharewow/pic_repo/raw/master/img/a_shortcuts3a.png) | 缩放适合                                                   |
 | 单击鼠标左键并拖动                                           | 移动最近的光标                                             |
 | Ctrl +在滚动条箭头上单击鼠标左键                             | 将窗口滚动到顶部或底部（垂直滚动）或向左或向右（水平滚动） |
 | 单击滚动条中的鼠标中键（仅适用于UNIX）                       | 将窗口滚动到点击位置                                       |
