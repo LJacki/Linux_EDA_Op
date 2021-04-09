@@ -133,4 +133,33 @@ DC的gatecount = total area / the area of NAND2;
 把2个PMOS和2个NMOS看成一个面积单元，也就是一个2输入与非门为一个单元，所以DC report_area，并找到对应元件库中的2输入与非门的面积大小（我找不到）；
 https://blog.csdn.net/chevroletss/article/details/6082960
 
+## 2021-04-09
+1.zip命令
+zip -r myfile.zip ./*
+将当前目录下的所有文件和文件夹全部压缩成myfile.zip文件,－r表示递归压缩子目录下所有文件.
+
+2.unzip命令
+unzip -o -d /home/sunny myfile.zip
+把myfile.zip文件解压到 /home/sunny/
+-o:不提示的情况下覆盖文件；
+-d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；
+
+3.其他
+zip -d myfile.zip smart.txt
+删除压缩文件中smart.txt文件
+zip -m myfile.zip ./rpm_info.txt
+向压缩文件中myfile.zip中添加rpm_info.txt文件
+-------------------------------------------------------------------------------
+
+
+要使用 zip 来压缩文件，在 shell 提示下键入下面的命令：
+
+zip -r filename.zip filesdir
+在这个例子里，filename.zip 代表你创建的文件，filesdir 代表你想放置新 zip 文件的目录。-r 选项指定你想递归地（recursively）包括所有包括在 filesdir 目录中的文件。
+要抽取 zip 文件的内容，键入以下命令：
+unzip filename.zip
+你可以使用 zip 命令同时处理多个文件和目录，方法是将它们逐一列出，并用空格间隔：
+
+zip -r filename.zip file1 file2 file3 /usr/work/school 
+上面的命令把 file1、file2、 file3、以及 /usr/work/school 目录的内容（假设这个目录存在）压缩起来，然后放入 filename.zip 文件中。
 
