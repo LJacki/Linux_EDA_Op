@@ -163,3 +163,21 @@ unzip filename.zip
 zip -r filename.zip file1 file2 file3 /usr/work/school 
 上面的命令把 file1、file2、 file3、以及 /usr/work/school 目录的内容（假设这个目录存在）压缩起来，然后放入 filename.zip 文件中。
 
+---
+
+## 使用lc将lib转换为db
+
+### 环境
+dc 2015.06版之后，自身就不再支持library compiler，需要自行安装library compiler。
+
+### 步骤
+$ lc_shell
+lc_shell> read_lib S011HDSP_X32Y8D32_BW_SS_1.08_125.lib
+lc_shell> write_lib -format db S011HDSP_X32Y8D32_BW_SS_1.08_125 -output S011HDSP_X32Y8D32_BW_SS_1.08_125.db
+lc_shell> quit
+————————————————
+版权声明：本文为CSDN博主「uvm_ydd」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/uvm_ydd/article/details/89709990
+
+https://www.cnblogs.com/IClearner/p/11008940.html
+	
