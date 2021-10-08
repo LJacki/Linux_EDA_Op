@@ -181,3 +181,48 @@ lc_shell> quit
 
 https://www.cnblogs.com/IClearner/p/11008940.html
 	
+## 常用的命令行
+	dc_shell | tee run.log
+	
+	report_area - hierarchy 可以显示每个模块的使用面积信息
+	
+ 脚本内容
+```tcl
+# set search path
+set_app_var search_path [list * /home/user/junkai_liu/Desktop/SRS5025/decoder/test1_00]
+
+# set dc library
+set_app_var link_library [list  ss_1v62_125c.db]
+
+set_app_var target_library [list ss_1v62_125c.db]
+
+set_app_var symbol_library [list ss_1v62_125c.db]
+
+sh rm -rf mapped
+sh mkdir mapped
+
+set_svf ./mapped/rld_top.svf
+
+set compile_seqmap_propagate_constants false
+
+# read verilog file
+analyze -format verilog [list data_adj.v \
+                                rld_core.v \
+                                rld_top.v]
+
+elaborate rld_top
+# set current design
+# current_design rld_top
+
+link
+```
+link 之后的结果为1，说明环境设置的是正确的，如果link之后的结果为0，说明环境有问题
+	
+含有parameter的实例化，需要使用
+```tcl
+analyze -format verilog [list data_adj.v\
+							rld_core.v\
+							rld_top.v]
+elavorate rld_top
+```
+进行source文件的读取。
