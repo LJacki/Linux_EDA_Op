@@ -184,8 +184,8 @@ https://www.cnblogs.com/IClearner/p/11008940.html
 ## 常用的命令行
 	dc_shell | tee run.log
 	
-	report_area - hierarchy 可以显示每个模块的使用面积信息
-	
+	report_area -hierarchy 可以显示每个模块的使用面积信息
+
  脚本内容
 ```tcl
 # set search path
@@ -226,3 +226,27 @@ analyze -format verilog [list data_adj.v\
 elavorate rld_top
 ```
 进行source文件的读取。
+
+http://blog.eetop.cn/blog-422523-28881.html
+
+![img](README.assets/422523_201207111024271BogM.png)
+
+analyzer是分析HDL的源程序并将分析产生的中间文件存于work（用户可以自己指定）的目录下
+
+elaborate则在产生的中间文件中生成verilog的模块或者VHD的实体；
+
+缺省情况下，elaborate读取的是work目录中的文件
+
+当前读取完所要综合的模块后，需要使用link命令将读到DC存储区中的模块或实体连接起来
+
+注意：如果在使用link命令后，出现unresolved design reference的警告信息，需要重新读取该模块，或者在.synopsys_dc.setup文件中添加link_library，告诉DC到库中去找这些模块，同时还要注意search_path中的路径是否指向该模块或单元电路所在的目录
+
+link命令执行后，DC就将模块按照RTL级或门级的描述将电路连接起来，之后的各种限制条件就可以对该电路的顶层模块施加；
+
+
+
+# [Linux中在当前目录下查找某个文件](https://www.cnblogs.com/wtjqs/p/10416654.html)
+
+https://www.cnblogs.com/wtjqs/p/10416654.html
+
+在eetop上下载到了Design Compiler User Guide，看一看综合的详细文件；
