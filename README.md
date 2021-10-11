@@ -250,3 +250,22 @@ link命令执行后，DC就将模块按照RTL级或门级的描述将电路连�
 https://www.cnblogs.com/wtjqs/p/10416654.html
 
 在eetop上下载到了Design Compiler User Guide，看一看综合的详细文件；
+
+
+
+Synthesis = Translation + Logic Optimization + Gate Mapping
+
+23、Design Compiler 的Topographical Mode相比Wire Load Models有什么优势？
+线负载模型（WLM）是基于工艺厂的数据统计，而不是特定于自己的设计。在深亚微米（UDSM）设计中，互连寄生参数对路径延迟有很大的影响 ，WLM是不够准确的。
+Topographical Mode使用placement算法来估计线延时，提供和实际物理布局更好的时序相关性。
+Topographical Mode 除了逻辑库之外，还需要物理库（Milkyway）
+
+------------------------------------------------
+版权声明：本文为CSDN博主「数字芯片实验室」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/iNostory/article/details/86751200
+
+
+
+5、Design Compiler 综合过程中 “link” 命令完成了什么功能？
+link 是 Design Compiler ”resolve”设计中例化模块的过程。Design Compiler 通过变量 “link_library” 指定例化模块库的位置，和 target_library 一样，默认为 your_library.db。建议显式地使用 link 命令，否则工具可能带着 “unresolved references” 进行综合，产生没有意义的结果，同时浪费时间。
+
