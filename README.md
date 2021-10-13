@@ -148,6 +148,7 @@ unzip -o -d /home/sunny myfile.zip
 zip -d myfile.zip smart.txt
 删除压缩文件中smart.txt文件
 zip -m myfile.zip ./rpm_info.txt
+
 向压缩文件中myfile.zip中添加rpm_info.txt文件
 -------------------------------------------------------------------------------
 
@@ -268,4 +269,54 @@ Topographical Mode 除了逻辑库之外，还需要物理库（Milkyway）
 
 5、Design Compiler 综合过程中 “link” 命令完成了什么功能？
 link 是 Design Compiler ”resolve”设计中例化模块的过程。Design Compiler 通过变量 “link_library” 指定例化模块库的位置，和 target_library 一样，默认为 your_library.db。建议显式地使用 link 命令，否则工具可能带着 “unresolved references” 进行综合，产生没有意义的结果，同时浪费时间。
+
+## 时序约束报告
+
+report constraint
+
+report constraint -all_violators
+
+report timing
+
+report timing -significant_digits 6 查看数据小数点后面6位
+
+时序分析之slack：https://www.cnblogs.com/chenwu128/archive/2011/12/12/2285423.html
+
+fpga时序分析和slack(SOC) (Quartus II)
+
+https://blog.csdn.net/gtkknd/article/details/52824855
+
+
+
+https://blog.csdn.net/sinat_29862967/article/details/111225986
+
+报告开始显示了路径的起点，路径终点，路径组名和路径检测的类型。此例中，路径检测类型为max，意味着最大的延时或者setup check，若是min则是最小的延时或者hold check
+
+下面一个大表显示了从起点到终点之间的一个个点的延时值。纵列有三个标识， Point， Incr和 Path，分别表示了路径中的各个点，此点所需要的延时和从起点一直累积到此点的延时值。（一般是6列：point、fanout扇出值、trans传输延时、incr器件延时、path、attributes延时类型）
+
+**星号(*)表示了使用了SDF文件中的延时值，r和f表示 上升或者下降沿。**
+
+> 标准延迟文件SDF：主要包含了网表中所有器件的延迟信息，用于时序仿真；通常情况下，在仿真过程中会使用由PT报出的sdf，因为PT会结合后端工具，生成延迟更为精确的sdf文件。
+
+时序约束对电路的要求：
+
+- 综合工具现在不能很好的支持一步电路，甚至不支持异步电路；
+- single clock，single cycle，单个时钟，单沿触发，不要一会儿posedge，一会儿negedge；
+
+可以用下面命令对除时钟以外的所有输入端口设置约束：
+set_input_delay -max 3.5 -clock CLK [romove_from_collection [all_inputs] [get_ports CLK]]；#表示从所有输入端口中除掉时钟CLK
+
+create_clock -period 10 [get_ports CLK]
+
+set_input_delay -max 6 -clock CLK [all_inputs]
+
+remove_input_delay [get ports CLK] ;#时钟不需要输入延迟的约束
+
+set_output_delay -max 4 -clock CLK [all_outputs]
+
+
+
+set_clock_uncertainty：对时钟的偏移与抖动进行建模，也就是对时钟的偏差进行建模。
+
+set_ clock_ uncertainty -rise 0.2 -fall 0.5 [get_clocks CLK]
 
