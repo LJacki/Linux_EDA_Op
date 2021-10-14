@@ -320,3 +320,43 @@ set_clock_uncertainty：对时钟的偏移与抖动进行建模，也就是对�
 
 set_ clock_ uncertainty -rise 0.2 -fall 0.5 [get_clocks CLK]
 
+### idea network
+
+可以设置为ideal network的端口有，时钟，复位，使能端口，因为这些端口会连接到很多个cell中，所以就是要一个端口驱动很多个cell，这样的延迟是很大的。所以在综合的时候就要做 ideal network或者dont_touch处理。
+这些高负载的网络，时钟要做时钟树综合，即CTS。 其他的做buffer tree.
+比如你的Design理由有CLK,nRESET, ENABLE, SCANMODE。这么多个高负载端口。
+你就可以这么的设置
+set_ideal_network -no_pro [list CLK nRESET ENABLE SCANMODE]
+
+## Parallel Command Execution Design Flow
+
+Figure 2-2 shows how to run checking and reporting commands in parallel to improve runtime in the Design Compiler design flow.
+
+*Figure 2-2 Parallel Command Execution in the Design Compiler Design Flow*
+
+RTL design
+
+Link and constrain the design
+
+Run checking commands in parallel ( 
+
+​	set_host_options -max_cores 8
+
+​	parallel_execute \\
+
+​	[list check_design check_timing …])
+
+compile_ultra
+
+Run reporting commands in parallel (
+
+​	set_host_options -max_cores 8
+
+​	update_timing
+
+​	parallel_execute \\ 
+
+​	[list report_timing report_qor …])
+
+可以一次并行输出多个报告；
+
