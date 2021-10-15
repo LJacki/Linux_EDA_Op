@@ -360,3 +360,37 @@ Run reporting commands in parallel (
 
 可以一次并行输出多个报告；
 
+## DC
+
+https://blog.csdn.net/ciscomonkey/article/details/108908386
+
+启动DC，link之后
+
+list_libs，查看当前内存中所有使用的库；
+
+list_designs，查看当前的设计有几个module；带 * 为current_design；
+
+
+
+由于在list_design中，我们仅仅只能看到最原始的design，不能看到例化后的instance。使用list_instance可以list当前current_instance下面的instance。
+
+### 各种report
+
+# This script file creates reports for all modules
+set maxpaths 15
+
+check_design > "${log_path}${rpt_file}"
+report_area >> "${log_path}${rpt_file}"
+report_design >> "${log_path}${rpt_file}"
+report_cell >> "${log_path}${rpt_file}"
+report_reference >> "${log_path}${rpt_file}"
+report_port -verbose >> "${log_path}${rpt_file}"
+report_net >> "${log_path}${rpt_file}"
+report_compile_options >> "${log_path}${rpt_file}"
+report_constraint -all_violators -verbose \
+
+​	\>\> "${log_path}${rpt_file}"
+report_timing -path end >> "${log_path}${rpt_file}"
+report_timing -max_path $maxpaths \
+​	\>\>"${log_path}${rpt_file}"
+
