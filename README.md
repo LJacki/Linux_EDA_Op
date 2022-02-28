@@ -394,3 +394,9 @@ report_timing -path end >> "${log_path}${rpt_file}"
 report_timing -max_path $maxpaths \
 ​	\>\>"${log_path}${rpt_file}"
 
+
+## 20220228
+	
+	.tgz格式的解压 tar zxvf filename
+	
+	.gz格式的解压 gunzip filename
